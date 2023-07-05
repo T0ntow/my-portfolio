@@ -1,0 +1,124 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=swap');
+</style>
+
+<ion-header>
+  <ion-label id="home"> <a href="#sobre">Inicio</a></ion-label>
+
+  <div>
+    <ion-label> <a href="#projects-box">Projetos</a> </ion-label>
+    <ion-label>Contato</ion-label>
+  </div>
+
+</ion-header>
+
+<ion-content>
+
+
+  <section id="section-home">
+    <img id="img1" src="/assets/images/back.png" alt="Imagem 1">
+    <img id="img2" src="/assets/images/back2.png" alt="Imagem 2">
+
+    <div id="sobre">
+
+      <div id="title-box">
+        <ion-title>Frontend Developer<span> |</span></ion-title>
+      </div>
+
+      <div id="subtitle-box">
+        <h3>
+          Tenho 19 anos sou desenvolvedor com diversos apps legais!
+        </h3>
+
+        <div id="logos">
+          <ion-icon id="logo" name="logo-github"></ion-icon>
+          <ion-icon id="logo" name="logo-linkedin"></ion-icon>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="section-projects" class="projects-box">
+
+    <div id="box-projects">
+      <ion-list >
+        <ion-item color="contrast" lines="none" button>
+          <ion-label class="contrast">Pokémon Yellow</ion-label>
+        </ion-item>
+        <ion-item color="transparent" lines="none" button>
+          <ion-label>Mega Man X</ion-label>
+        </ion-item>
+        <ion-item color="transparent" lines="none" button>
+          <ion-label>The Legend of Zelda</ion-label>
+        </ion-item>
+        <ion-item color="transparent" lines="none" button>
+          <ion-label>Pac-Man</ion-label>
+        </ion-item>
+        <ion-item color="transparent" lines="none" button>
+          <ion-label>Super Mario World</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <div id="content">
+        <h4>Applicativo completo para gerenciar seus gastos em diferentes carteias, com gráficos e categorias
+          para uma melhor experiência</h4>
+
+        <div id="deploy-box">
+          <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
+              https://wallet-manager2.netlify.app/home</a></p>
+          <p>Disponívem em: <a href="" target="_blank"> https://wallet-manager2.netlify.app/home</a></p>
+
+        </div>
+
+        <div id="tecnologias">
+          <ion-icon class="logo" name="logo-angular"></ion-icon>
+          <ion-icon class="logo" name="logo-ionic"></ion-icon>
+          <ion-icon class="logo" name="logo-firebase"></ion-icon>
+          <ion-icon class="logo" name="logo-sass"></ion-icon>
+        </div>
+
+
+      </div>
+
+      <ion-button id="box-next-page" color="transparent" button lines="none"><ion-icon id="arrow"
+          name="chevron-forward-outline"></ion-icon></ion-button>
+
+    </div>
+  </section>
+
+  <section id="section-contato" class="secao-qualquer">
+
+    <ion-card color="dark">
+      <ion-card-header color="dark">
+        <ion-card-title color="tertiary">Contate-me</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Olá, você pode me enviar uma mensagem!
+
+        <form action="">
+          <ion-item color="dark">
+            <ion-input color="tertiary" label="Nome" type="text" labelPlacement="floating"
+              placeholder="Seu nome"></ion-input>
+          </ion-item>
+
+          <ion-item color="dark">
+            <ion-input color="tertiary" label="Email" type="email" labelPlacement="floating"
+              placeholder="Seu endereço de email"></ion-input>
+          </ion-item>
+          <ion-item color="dark">
+            <ion-input color="tertiary" label="Mensagem" type="text" labelPlacement="floating"
+              placeholder="Sua mensagem"></ion-input>
+          </ion-item>
+        </form>
+      </ion-card-content>
+
+      <ion-button color="tertiary" fill="clear">Enviar</ion-button>
+    </ion-card>
+
+  </section>
+
+</ion-content>
