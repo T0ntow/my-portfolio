@@ -4,17 +4,16 @@
 </style>
 
 <ion-header>
-  <ion-label id="home" (click)="scrollToSection('section-home')">Inicio</ion-label>
+  <ion-label id="home" class="nav"(click)="scrollToSection('section-home')">Inicio</ion-label>
 
   <div>
-    <ion-label (click)="scrollToSection('section-projects')">Projetos</ion-label>
-    <ion-label (click)="scrollToSection('section-contato')">Contato</ion-label>
+    <ion-label class="nav" (click)="scrollToSection('section-projects')">Projetos</ion-label>
+    <ion-label class="nav" (click)="scrollToSection('section-contato')">Contato</ion-label>
   </div>
 
 </ion-header>
+
 <ion-content>
-
-
   <section id="section-home">
     <img id="img1" src="/assets/images/back.png" alt="Imagem 1">
     <img id="img2" src="/assets/images/back2.png" alt="Imagem 2">
@@ -31,8 +30,8 @@
         </h3>
 
         <div id="logos">
-          <ion-icon id="logo" name="logo-github"></ion-icon>
-          <ion-icon id="logo" name="logo-linkedin"></ion-icon>
+          <ion-icon class="logo" name="logo-github"></ion-icon>
+          <ion-icon class="logo" name="logo-linkedin"></ion-icon>
         </div>
       </div>
 
