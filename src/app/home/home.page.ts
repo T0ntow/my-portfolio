@@ -76,6 +76,11 @@ export class HomePage {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  selectedProject: string  = "projeto1";
+  toggleProject(project: string) {
+    this.selectedProject = project;
+  }
   
 
 }
