@@ -22,20 +22,20 @@ export class HomePage {
 
   sendEmail() {
     console.log("send email");
-  
+
     if (this.emailForm.invalid) {
       return;
     }
-  
+
     const emailData = {
       from: this.emailForm.value.from,
       to: 'wellingtonbs109@gmail.com',
       nome: this.emailForm.value.nome,
       texto: this.emailForm.value.texto
     };
-  
+
     console.log(emailData);
-  
+
     // Fazer uma solicitação POST para o servidor
     fetch('http://localhost:3002/enviar-email', {
       method: 'POST',
@@ -53,9 +53,9 @@ export class HomePage {
           header: 'Email enviado com sucesso',
           buttons: ['OK'],
         });
-    
+
         await alert.present();
-        
+
       })
       .catch(async error => {
         console.error(error); // Tratamento de erros
@@ -64,11 +64,18 @@ export class HomePage {
           header: 'Falha ao enviar email',
           buttons: ['OK'],
         });
-    
+
         await alert.present();
       });
   }
-  
+
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   
 
 }

@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Bungee", cursive;
+  scroll-behavior: smooth;
 
   a {
     color: #ffffff;
@@ -26,16 +27,16 @@ ion-header {
     left: 5%;
   }
 
+  ion-label {
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
   div {
     width: 25%;
     display: flex;
     justify-content: space-around;
     margin-left: auto;
-
-    ion-label {
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
   }
 }
 

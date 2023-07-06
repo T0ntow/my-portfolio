@@ -4,15 +4,14 @@
 </style>
 
 <ion-header>
-  <ion-label id="home"> <a href="#sobre">Inicio</a></ion-label>
+  <ion-label id="home" (click)="scrollToSection('section-home')">Inicio</ion-label>
 
   <div>
-    <ion-label> <a href="#projects-box">Projetos</a> </ion-label>
-    <ion-label>Contato</ion-label>
+    <ion-label (click)="scrollToSection('section-projects')">Projetos</ion-label>
+    <ion-label (click)="scrollToSection('section-contato')">Contato</ion-label>
   </div>
 
 </ion-header>
-
 <ion-content>
 
 
