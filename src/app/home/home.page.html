@@ -4,7 +4,7 @@
 </style>
 
 <ion-header>
-  <ion-label id="home" class="nav"(click)="scrollToSection('section-home')">Inicio</ion-label>
+  <ion-label id="home" class="nav" (click)="scrollToSection('section-home')">Inicio</ion-label>
 
   <div>
     <ion-label class="nav" (click)="scrollToSection('section-projects')">Projetos</ion-label>
@@ -30,8 +30,13 @@
         </h3>
 
         <div id="logos">
-          <ion-icon class="logo" name="logo-github"></ion-icon>
-          <ion-icon class="logo" name="logo-linkedin"></ion-icon>
+          <a href="https://github.com/T0ntow" target="_blank">
+            <ion-icon class="logo" name="logo-github"></ion-icon>
+          </a>
+
+          <a href="https://www.linkedin.com/in/wellington-batista-734a34220/" target="_blank">
+            <ion-icon class="logo" name="logo-linkedin"></ion-icon>
+          </a>
         </div>
       </div>
 
@@ -40,34 +45,38 @@
   </section>
 
   <section id="section-projects" class="projects-box">
-
     <div id="box-projects">
-      <ion-list >
+      <ion-list>
         <ion-item color="transparent" lines="none" button>
-          <ion-label [ngClass]="{'selected': selectedProject === 'projeto1'}" (click)="toggleProject('projeto1')" id="projeto1">Pokémon Yellow</ion-label>
+          <ion-label [ngClass]="{'selected': selectedProject === 'projeto1'}" (click)="toggleProject('projeto1')"
+            id="projeto1">Wallet Manager</ion-label>
         </ion-item>
         <ion-item color="transparent" lines="none" button>
-          <ion-label [ngClass]="{'selected': selectedProject === 'projeto2'}" (click)="toggleProject('projeto2')" id="projeto2">Mega Man X</ion-label>
+          <ion-label [ngClass]="{'selected': selectedProject === 'projeto2'}" (click)="toggleProject('projeto2')"
+            id="projeto2">Controle Estoque</ion-label>
         </ion-item>
         <ion-item color="transparent" lines="none" button>
-          <ion-label [ngClass]="{'selected': selectedProject === 'projeto3'}" (click)="toggleProject('projeto3')">The Legend of Zelda</ion-label>
+          <ion-label [ngClass]="{'selected': selectedProject === 'projeto3'}" (click)="toggleProject('projeto3')">The
+            Conversor Romano</ion-label>
         </ion-item>
         <ion-item color="transparent" lines="none" button>
-          <ion-label [ngClass]="{'selected': selectedProject === 'projeto4'}" (click)="toggleProject('projeto4')">Pac-Man</ion-label>
+          <ion-label [ngClass]="{'selected': selectedProject === 'projeto4'}"
+            (click)="toggleProject('projeto4')">Projeto 4</ion-label>
         </ion-item>
         <ion-item color="transparent" lines="none" button>
-          <ion-label [ngClass]="{'selected': selectedProject === 'projeto5'}" (click)="toggleProject('projeto5')">Super Mario World</ion-label>
+          <ion-label [ngClass]="{'selected': selectedProject === 'projeto5'}" (click)="toggleProject('projeto5')">Super
+            Projeto 5</ion-label>
         </ion-item>
       </ion-list>
 
-      <div *ngIf="selectedProject === 'projeto1'">    
+
+      <div *ngIf="selectedProject === 'projeto1'">
         <div class="content">
           <h4>Applicativo completo para gerenciar seus gastos em diferentes carteias, com gráficos e categorias
             para uma melhor experiência</h4>
           <div id="deploy-box">
             <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
                 https://wallet-manager2.netlify.app/home</a></p>
-            <p>Disponívem em: <a href="" target="_blank"> https://wallet-manager2.netlify.app/home</a></p>
           </div>
           <div id="tecnologias">
             <ion-icon class="logo" name="logo-angular"></ion-icon>
@@ -77,41 +86,40 @@
           </div>
         </div>
       </div>
- 
 
       <div class="content" *ngIf="selectedProject === 'projeto2'">
-        <h4>Applicativo 2</h4>
+        <h4>Applicativo desenvolvido para treinar SQL e Express, perfeito para gerenciar produtos de um estoque de qualquer empresa, com vários filtros e pesquisa</h4>
 
         <div id="deploy-box">
-          <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
-              https://wallet-manager2.netlify.app/home</a></p>
-          <p>Disponívem em: <a href="" target="_blank"> https://wallet-manager2.netlify.app/home</a></p>
+          <p>Deploy em: <a href="https://controle-estoque-sql.netlify.app/home" target="_blank">
+            https://controle-estoque-sql.netlify.app/home</a></p>
+          <p>Disponívem em: <a href="https://github.com/T0ntow/Controle-Estoque" target="_blank"> https://github.com/T0ntow/Controle-Estoque</a></p>
 
         </div>
 
         <div id="tecnologias">
           <ion-icon class="logo" name="logo-angular"></ion-icon>
           <ion-icon class="logo" name="logo-ionic"></ion-icon>
-          <ion-icon class="logo" name="logo-firebase"></ion-icon>
-          <ion-icon class="logo" name="logo-sass"></ion-icon>
+          <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
+          <img  class="logo"  src="/assets/images/express.png" alt="">
+
+          <ion-icon class="logo" name="logo-sass"></ion-icon> 
         </div>
       </div>
 
-      
+
       <div class="content" *ngIf="selectedProject === 'projeto3'">
-        <h4>Applicativo 3</h4>
+        <h4>Conversor de algarismos romanos para decimais e vice-versa</h4>
 
         <div id="deploy-box">
-          <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
-              https://wallet-manager2.netlify.app/home</a></p>
-          <p>Disponívem em: <a href="" target="_blank"> https://wallet-manager2.netlify.app/home</a></p>
+          <p>Deploy em: <a href="https://conversor-romano.netlify.app/" target="_blank">
+            https://conversor-romano.netlify.app/</a></p>
+          <p>Disponívem em: <a href="https://github.com/T0ntow/conversor-romano" target="_blank"> https://github.com/T0ntow/conversor-romano</a></p>
 
         </div>
 
         <div id="tecnologias">
           <ion-icon class="logo" name="logo-angular"></ion-icon>
-          <ion-icon class="logo" name="logo-ionic"></ion-icon>
-          <ion-icon class="logo" name="logo-firebase"></ion-icon>
           <ion-icon class="logo" name="logo-sass"></ion-icon>
         </div>
       </div>
@@ -165,10 +173,10 @@
       <ion-card-content>
         Olá, você pode me enviar uma mensagem!
 
-        <form action=""   [formGroup]="emailForm">
+        <form action="" [formGroup]="emailForm">
           <ion-item color="dark">
-            <ion-input color="tertiary" label="Nome" type="text" labelPlacement="floating"
-              placeholder="Seu nome" formControlName="nome"></ion-input>
+            <ion-input color="tertiary" label="Nome" type="text" labelPlacement="floating" placeholder="Seu nome"
+              formControlName="nome"></ion-input>
           </ion-item>
 
           <ion-item color="dark">
