@@ -102,15 +102,15 @@
         <form action=""   [formGroup]="emailForm">
           <ion-item color="dark">
             <ion-input color="tertiary" label="Nome" type="text" labelPlacement="floating"
-              placeholder="Seu nome" formControlName="from"></ion-input>
+              placeholder="Seu nome" formControlName="nome"></ion-input>
           </ion-item>
 
           <ion-item color="dark">
             <ion-input color="tertiary" label="Email" type="email" labelPlacement="floating"
-              placeholder="Seu endereço de email" formControlName="email"></ion-input>
+              placeholder="Seu endereço de email" formControlName="from"></ion-input>
           </ion-item>
           <ion-item color="dark">
-            <ion-input color="tertiary" label="Mensagem" type="text" labelPlacement="floating"
+            <ion-input color="tertiary" label="Mensagem" type="text" formControlName="texto" labelPlacement="floating"
               placeholder="Sua mensagem"></ion-input>
           </ion-item>
         </form>

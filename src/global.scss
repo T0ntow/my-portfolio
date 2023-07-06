@@ -24,3 +24,19 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.alert {
+    .alert-wrapper {
+      .alert-head {
+          // header styling here eg. background
+          h2 {
+              // header text styling here eg. color, font size
+              color:#000;
+              font-weight: bold;
+
+              text-align: center;
+          }
+      }
+    }
+  }
+  
