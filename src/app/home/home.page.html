@@ -41,7 +41,6 @@
       </div>
 
     </div>
-
   </section>
 
   <section id="section-projects" class="projects-box">
@@ -70,7 +69,7 @@
       </ion-list>
 
 
-      <div *ngIf="selectedProject === 'projeto1'">
+      <div *ngIf="selectedProject === 'projeto1'" class="box-project">
         <div class="content">
           <h4>Applicativo completo para gerenciar seus gastos em diferentes carteias, com gráficos e categorias
             para uma melhor experiência</h4>
@@ -85,80 +84,59 @@
             <ion-icon class="logo" name="logo-sass"></ion-icon>
           </div>
         </div>
+
+       <div class="box-next-page">
+         <ion-button color="tertiary" fill="clear"> 
+          <ion-icon class="arrow" fill="clear" name="chevron-forward-outline"></ion-icon>
+         </ion-button>
+       </div>
       </div>
 
-      <div class="content" *ngIf="selectedProject === 'projeto2'">
-        <h4>Applicativo desenvolvido para treinar SQL e Express, perfeito para gerenciar produtos de um estoque de qualquer empresa, com vários filtros e pesquisa</h4>
-
-        <div id="deploy-box">
-          <p>Deploy em: <a href="https://controle-estoque-sql.netlify.app/home" target="_blank">
-            https://controle-estoque-sql.netlify.app/home</a></p>
-          <p>Disponívem em: <a href="https://github.com/T0ntow/Controle-Estoque" target="_blank"> https://github.com/T0ntow/Controle-Estoque</a></p>
-
+      <div *ngIf="selectedProject === 'projeto2'" class="box-project">
+        <div class="content">
+          <h4>Applicativo desenvolvido para treinar SQL e Express, perfeito para gerenciar produtos de um estoque de qualquer empresa, com vários filtros e pesquisa</h4>
+          <div id="deploy-box">
+            <p>Deploy em: <a href="https://controle-estoque-sql.netlify.app/home" target="_blank">
+              https://controle-estoque-sql.netlify.app/home</a></p>
+            <p>Disponívem em: <a href="https://github.com/T0ntow/Controle-Estoque" target="_blank"> https://github.com/T0ntow/Controle-Estoque</a></p>
+          </div>
+          <div id="tecnologias">
+            <ion-icon class="logo" name="logo-angular"></ion-icon>
+            <ion-icon class="logo" name="logo-ionic"></ion-icon>
+            <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
+            <img  class="logo"  src="/assets/images/express.png" alt="">
+            <ion-icon class="logo" name="logo-sass"></ion-icon>
+          </div>
         </div>
-
-        <div id="tecnologias">
-          <ion-icon class="logo" name="logo-angular"></ion-icon>
-          <ion-icon class="logo" name="logo-ionic"></ion-icon>
-          <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
-          <img  class="logo"  src="/assets/images/express.png" alt="">
-
-          <ion-icon class="logo" name="logo-sass"></ion-icon> 
-        </div>
-      </div>
-
-
-      <div class="content" *ngIf="selectedProject === 'projeto3'">
-        <h4>Conversor de algarismos romanos para decimais e vice-versa</h4>
-
-        <div id="deploy-box">
-          <p>Deploy em: <a href="https://conversor-romano.netlify.app/" target="_blank">
-            https://conversor-romano.netlify.app/</a></p>
-          <p>Disponívem em: <a href="https://github.com/T0ntow/conversor-romano" target="_blank"> https://github.com/T0ntow/conversor-romano</a></p>
-
-        </div>
-
-        <div id="tecnologias">
-          <ion-icon class="logo" name="logo-angular"></ion-icon>
-          <ion-icon class="logo" name="logo-sass"></ion-icon>
+        <div class="box-next-page">
+          <ion-button color="tertiary" fill="clear">
+           <ion-icon class="arrow" fill="clear" name="chevron-forward-outline"></ion-icon>
+          </ion-button>
         </div>
       </div>
 
-      <div class="content" *ngIf="selectedProject === 'projeto4'">
-        <h4>Applicativo 4</h4>
 
-        <div id="deploy-box">
-          <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
-              https://wallet-manager2.netlify.app/home</a></p>
-          <p>Disponívem em: <a href="" target="_blank"> https://wallet-manager2.netlify.app/home</a></p>
-
+      <div *ngIf="selectedProject === 'projeto3'" class="box-project">
+        <div class="content">
+          <h4>Conversor de algarismos romanos para decimais e vice-versa</h4>
+          <div id="deploy-box">
+            <p>Deploy em: <a href="https://conversor-romano.netlify.app/" target="_blank">
+              https://conversor-romano.netlify.app/</a></p>
+            <p>Disponívem em: <a href="https://github.com/T0ntow/conversor-romano" target="_blank"> https://github.com/T0ntow/conversor-romano</a></p>
+          </div>
+          <div id="tecnologias">
+            <ion-icon class="logo" name="logo-angular"></ion-icon>
+            <ion-icon class="logo" name="logo-sass"></ion-icon>
+          </div>
         </div>
 
-        <div id="tecnologias">
-          <ion-icon class="logo" name="logo-angular"></ion-icon>
-          <ion-icon class="logo" name="logo-ionic"></ion-icon>
-          <ion-icon class="logo" name="logo-firebase"></ion-icon>
-          <ion-icon class="logo" name="logo-sass"></ion-icon>
-        </div>
-      </div>
-
-      <div class="content" *ngIf="selectedProject === 'projeto5'">
-        <h4>Applicativo 5</h4>
-
-        <div id="deploy-box">
-          <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
-              https://wallet-manager2.netlify.app/home</a></p>
-          <p>Disponívem em: <a href="" target="_blank"> https://wallet-manager2.netlify.app/home</a></p>
-
-        </div>
-
-        <div id="tecnologias">
-          <ion-icon class="logo" name="logo-angular"></ion-icon>
-          <ion-icon class="logo" name="logo-ionic"></ion-icon>
-          <ion-icon class="logo" name="logo-firebase"></ion-icon>
-          <ion-icon class="logo" name="logo-sass"></ion-icon>
+        <div class="box-next-page">
+          <ion-button color="tertiary" fill="clear">
+           <ion-icon class="arrow" fill="clear" name="chevron-forward-outline"></ion-icon>
+          </ion-button>
         </div>
       </div>
+
 
     </div>
   </section>
