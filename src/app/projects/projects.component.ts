@@ -11,4 +11,10 @@ export class ProjectsComponent  implements OnInit {
 
   ngOnInit() {}
 
+  
+  selectedProject: string = "projeto1";
+  toggleProject(project: string) {
+    this.selectedProject = project;
+  }
+
 }

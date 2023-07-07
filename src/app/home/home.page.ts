@@ -77,10 +77,6 @@ export class HomePage {
     }
   }
 
-  selectedProject: string  = "projeto1";
-  toggleProject(project: string) {
-    this.selectedProject = project;
-  }
-  
+
 
 }
