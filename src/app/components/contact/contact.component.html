@@ -1,0 +1,27 @@
+<ion-card color="dark">
+  <ion-card-header color="dark">
+    <ion-card-title color="tertiary">Contate-me</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Olá, você pode me enviar uma mensagem!
+
+    <form action="" [formGroup]="emailForm">
+      <ion-item color="dark">
+        <ion-input color="tertiary" label="Nome" type="text" labelPlacement="floating" placeholder="Seu nome"
+          formControlName="nome"></ion-input>
+      </ion-item>
+
+      <ion-item color="dark">
+        <ion-input color="tertiary" label="Email" type="email" labelPlacement="floating"
+          placeholder="Seu endereço de email" formControlName="from"></ion-input>
+      </ion-item>
+      <ion-item color="dark">
+        <ion-input color="tertiary" label="Mensagem" type="text" formControlName="texto" labelPlacement="floating"
+          placeholder="Sua mensagem"></ion-input>
+      </ion-item>
+    </form>
+  </ion-card-content>
+
+  <ion-button color="tertiary" fill="clear" (click)="sendEmail()">Enviar</ion-button>
+</ion-card>

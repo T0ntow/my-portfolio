@@ -142,8 +142,6 @@ ion-content {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    
   }
 
   #section-contato {
@@ -153,18 +151,6 @@ ion-content {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    ion-card {
-      padding: 25px;
-      width: 50vw;
-
-      ion-button {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        align-items: center;
-      }
-    }
   }
 
   @keyframes asc {
