@@ -158,8 +158,7 @@ ion-content {
     top: 5px;
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0px auto;
   }
   
   
@@ -181,6 +180,72 @@ ion-content {
     align-items: center;
     justify-content: center;
   }
+
+  #section-linha-tempo {
+    height: 150vh;
+    background: #1b1b1b;
+
+    position: relative;
+  
+    #linha {
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      margin: 0px auto;
+
+      width: 1px;
+      height: 150vh;
+      background-color: #535353;
+    }
+
+    ion-title {
+      font-size: 2rem;
+      letter-spacing: 4px;
+    }
+    
+    ion-card {
+      height: 230px;
+      padding: 20px;
+
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+      ion-card-title {
+        color: var(--contrast);
+      }
+
+      ion-card-content {
+        margin: 25px 0px;
+        color: #1b1b1b;
+      }
+    }
+
+    #year-2023 {
+      position: absolute;
+      left: 15%;
+      width: 33%;
+
+    }
+
+    #year-2022 {
+      width: 33%;
+
+      position: absolute;
+      top: 350px;
+      right: 15%;
+    }
+
+    #year-2021 {
+      width: 33%;
+
+      position: absolute;
+      top: 740px;
+      left: 15%;
+    }
+  }
+
 
   @keyframes asc {
     from {

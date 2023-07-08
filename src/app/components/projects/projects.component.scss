@@ -37,17 +37,10 @@
     }
   }
   
-  .fade-in {
-    opacity: 1;
-  }
-
   .box-project {
     display: flex;
     justify-content: space-between;
     display: block;
-
-    opacity: 0;
-    transition: opacity 0.5s;
 
     .content {
       height: 60vh;
