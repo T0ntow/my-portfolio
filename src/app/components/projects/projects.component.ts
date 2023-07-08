@@ -39,11 +39,22 @@ export class ProjectsComponent implements OnInit {
     console.log("changed", e);
   }
 
-  images = [
+  imagesWallet = [
     '/assets/images/wallet-tablet-celular.png',
-    '/assets/images/toow2.png',
-    '/assets/images/toow2.png',
-    '/assets/images/toow2.png'
+    '/assets/images/wallet-pc.png',
   ]
+
+  imagesControleEstoque = [
+    '/assets/images/controle-estoque.png',
+  ]
+
+  imagesConversor = [
+    '/assets/images/conversor-romano.png',
+  ]
+
+  imagesTtow= [
+    '/assets/images/toow2.png',
+  ]
+
 
 }

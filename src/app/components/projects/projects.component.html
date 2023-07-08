@@ -9,16 +9,10 @@
         id="projeto2">Controle Estoque</ion-label>
     </ion-item>
     <ion-item color="transparent" lines="none" button>
-      <ion-label [ngClass]="{'selected': selectedProject === 'projeto3'}" (click)="toggleProject('projeto3')">The
-        Conversor Romano</ion-label>
+      <ion-label [ngClass]="{'selected': selectedProject === 'projeto3'}" (click)="toggleProject('projeto3')">Conversor Romano</ion-label>
     </ion-item>
     <ion-item color="transparent" lines="none" button>
-      <ion-label [ngClass]="{'selected': selectedProject === 'projeto4'}" (click)="toggleProject('projeto4')">Projeto
-        4</ion-label>
-    </ion-item>
-    <ion-item color="transparent" lines="none" button>
-      <ion-label [ngClass]="{'selected': selectedProject === 'projeto5'}" (click)="toggleProject('projeto5')">Super
-        Projeto 5</ion-label>
+      <ion-label [ngClass]="{'selected': selectedProject === 'projeto4'}" (click)="toggleProject('projeto4')">TTOW Eletronics</ion-label>
     </ion-item>
   </ion-list>
 
@@ -48,7 +42,7 @@
 
         </swiper-slide>
 
-        <swiper-slide *ngFor="let image of images">
+        <swiper-slide *ngFor="let image of imagesWallet">
           <img [src]="image">
         </swiper-slide>
 
@@ -64,15 +58,83 @@
 
         <swiper-slide>
           <div class="content ion-padding-horizontal">
-            <h4>Applicativo completo para gerenciar seus gastos em diferentes carteias, com gráficos e categorias
-              para uma melhor experiência</h4>
+            <h4>Applicativo desenvolvido para treinar SQL e Express, perfeito para gerenciar produtos de um estoque de qualquer empresa, com vários filtros e pesquisa</h4>
+
             <div id="deploy-box">
-              <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
-                  https://wallet-manager2.netlify.app/home</a></p>
+              <p>Deploy em: <a href="https://controle-estoque-sql.netlify.app/home" target="_blank">
+                https://controle-estoque-sql.netlify.app/home</a></p>
+              <p>Disponívem em: <a href="https://github.com/T0ntow/Controle-Estoque" target="_blank"> https://github.com/T0ntow/Controle-Estoque</a></p>
             </div>
+
             <div id="tecnologias">
               <ion-icon class="logo" name="logo-angular"></ion-icon>
               <ion-icon class="logo" name="logo-ionic"></ion-icon>
+              <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
+              <img  class="logo"  src="/assets/images/express.png" alt="">
+              <ion-icon class="logo" name="logo-sass"></ion-icon>
+            </div>
+          </div>
+
+        </swiper-slide>
+
+        <swiper-slide *ngFor="let image of imagesControleEstoque">
+          <img [src]="image">
+        </swiper-slide>
+
+      </swiper-container>
+    </div>
+  </div>
+
+  <div *ngIf="selectedProject === 'projeto3'" class="box-project">
+    
+    <div class="content">
+      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
+        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
+
+        <swiper-slide>
+          <div class="content ion-padding-horizontal">
+            <h4>Conversor de algarismos romanos para decimais e vice-versa</h4>
+
+            <div id="deploy-box">
+              <p>Deploy em: <a href="https://conversor-romano.netlify.app/" target="_blank">
+                https://conversor-romano.netlify.app/</a></p>
+              <p>Disponívem em: <a href="https://github.com/T0ntow/conversor-romano" target="_blank"> https://github.com/T0ntow/conversor-romano</a></p>
+            </div>
+
+            <div id="tecnologias">
+              <ion-icon class="logo" name="logo-angular"></ion-icon>
+              <ion-icon class="logo" name="logo-sass"></ion-icon>
+            </div>
+          </div>
+
+        </swiper-slide>
+
+        <swiper-slide *ngFor="let image of imagesConversor">
+          <img [src]="image">
+        </swiper-slide>
+
+      </swiper-container>
+    </div>
+  </div>
+
+  <div *ngIf="selectedProject === 'projeto4'" class="box-project">
+    
+    <div class="content">
+      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
+        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
+
+        <swiper-slide>
+          <div class="content ion-padding-horizontal">
+            <h4>Aplicativo desenvolvido quando estive iniciando no mundo dos frameworks, com várias funcionalidades como sistema de login, cadastro de produtos e sistema de busca</h4>
+
+            <div id="deploy-box">
+              <p>Deploy em: <a href="https://ttow.netlify.app/" target="_blank">
+                https://ttow.netlify.app/</a></p>
+              <p>Disponívem em: <a href="https://github.com/T0ntow/TTOW_empresaEletronicos" target="_blank"> https://github.com/T0ntow/TTOW_empresaEletronicos</a></p>
+            </div>
+
+            <div id="tecnologias">
+              <ion-icon class="logo" name="logo-vue"></ion-icon>
               <ion-icon class="logo" name="logo-firebase"></ion-icon>
               <ion-icon class="logo" name="logo-sass"></ion-icon>
             </div>
@@ -80,7 +142,7 @@
 
         </swiper-slide>
 
-        <swiper-slide *ngFor="let image of images">
+        <swiper-slide *ngFor="let image of imagesTtow">
           <img [src]="image">
         </swiper-slide>
 
