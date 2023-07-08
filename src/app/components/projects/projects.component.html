@@ -16,10 +16,7 @@
     </ion-item>
   </ion-list>
 
-
-
   <div *ngIf="selectedProject === 'projeto1'" class="box-project">
-
     <div class="content">
       <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
         [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 

@@ -3,6 +3,13 @@
 
   display: flex;
   justify-content: space-between;
+  
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 
   ion-list {
     background-color: #d0d0d0;
@@ -29,22 +36,18 @@
       }
     }
   }
-
-  @keyframes show-content {
-    0% {
-      opacity: 0;
-      transform: translateX(-35%);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
+  
+  .fade-in {
+    opacity: 1;
   }
 
   .box-project {
     display: flex;
     justify-content: space-between;
+    display: block;
+
+    opacity: 0;
+    transition: opacity 0.5s;
 
     .content {
       height: 60vh;

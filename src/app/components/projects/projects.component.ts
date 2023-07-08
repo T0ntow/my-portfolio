@@ -7,17 +7,16 @@ import Swiper from 'swiper'
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-
   swiper?: Swiper;
 
-  @ViewChild('swiper') swiperElement: ElementRef | undefined;
+  @ViewChild('') swiperElement: ElementRef | undefined;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
-
   }
-
+  
   swiperReady() {
     this.swiper = this.swiperElement?.nativeElement.swiper;
   }
@@ -52,7 +51,7 @@ export class ProjectsComponent implements OnInit {
     '/assets/images/conversor-romano.png',
   ]
 
-  imagesTtow= [
+  imagesTtow = [
     '/assets/images/toow2.png',
   ]
 
