@@ -9,6 +9,7 @@
   <div>
     <ion-label class="nav" (click)="scrollToSection('section-projects')">Projetos</ion-label>
     <ion-label class="nav" (click)="scrollToSection('section-contato')">Contato</ion-label>
+    <ion-label class="nav" (click)="scrollToSection('section-contato')">Sobre</ion-label>
   </div>
 
 </ion-header>
@@ -43,9 +44,12 @@
     </div>
   </section>
 
+  <div class="divisao"></div>
+
   <section id="section-projects" class="projects-box">
     <app-projects></app-projects>
   </section>
+  <div class="divisao"></div>
 
   <section id="section-contato" class="secao-qualquer">
     <app-contact></app-contact>
