@@ -36,11 +36,25 @@
       }
     }
   }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      filter: blur(5px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
   
   .box-project {
     display: flex;
     justify-content: space-between;
     display: block;
+
+    animation: show .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
 
     .content {
       height: 60vh;
