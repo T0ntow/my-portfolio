@@ -35,12 +35,15 @@ export class HomePage implements OnInit {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target);
+          entry.target.classList.add('show');
+        } else {
+          // Remove a classe 'fade-in' se o componente não estiver visível
+          entry.target.classList.remove('show');
+  
         }
       });
     });
-
+  
     this.observerElements?.forEach(elementRef => {
       const element = elementRef.nativeElement;
       if (element instanceof Element) {
@@ -48,5 +51,5 @@ export class HomePage implements OnInit {
       }
     });
   }
-
+  
 }

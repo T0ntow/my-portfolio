@@ -14,19 +14,27 @@ $contrast: #5260ff;
   
 @keyframes show {
   from{
-    transform: translateY(60%);
-    opacity: 0;
+    transform: translateX(-40%);
   }
 
   to{
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-.fade-in {
-  animation: show 1s cubic-bezier(.2, 0, 0, 1);
+.observer {
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 1.2s;
 }
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  animation: show .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
 ion-header {
   display: flex;
   justify-content: space-between;
