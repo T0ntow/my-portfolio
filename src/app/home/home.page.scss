@@ -11,7 +11,22 @@
 }
 
 $contrast: #5260ff;
+  
+@keyframes show {
+  from{
+    transform: translateY(60%);
+    opacity: 0;
+  }
 
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: show 1s cubic-bezier(.2, 0, 0, 1);
+}
 ion-header {
   display: flex;
   justify-content: space-between;
@@ -160,8 +175,7 @@ ion-content {
     right: 0;
     margin: 0px auto;
   }
-  
-  
+
 
   #section-projects {
     height: 100vh;
