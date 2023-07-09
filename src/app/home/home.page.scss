@@ -222,8 +222,13 @@ ion-content {
     }
 
     ion-title {
-      font-size: 2rem;
+      font-size: 3.5rem;
       letter-spacing: 4px;
+
+      color: #ffffff;
+      text-shadow: 2px 3px #555555;
+
+      z-index: -10;
     }
     
     ion-card {
