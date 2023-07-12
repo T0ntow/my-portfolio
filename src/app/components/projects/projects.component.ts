@@ -54,6 +54,9 @@ export class ProjectsComponent implements OnInit {
   imagesTtow = [
     '/assets/images/toow2.png',
   ]
-
+  
+  imagesPokedex = [
+    '/assets/images/pokedex.png',
+  ]
 
 }

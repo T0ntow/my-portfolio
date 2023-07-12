@@ -14,6 +14,9 @@
     <ion-item color="transparent" lines="none" button>
       <ion-label [ngClass]="{'selected': selectedProject === 'projeto4'}" (click)="toggleProject('projeto4')">TTOW Eletronics</ion-label>
     </ion-item>
+    <ion-item color="transparent" lines="none" button>
+      <ion-label [ngClass]="{'selected': selectedProject === 'projeto5'}" (click)="toggleProject('projeto5')">Pokedex</ion-label>
+    </ion-item>
   </ion-list>
 
   <div *ngIf="selectedProject === 'projeto1'" class="box-project">
@@ -146,5 +149,39 @@
       </swiper-container>
     </div>
   </div>
+
+  <div *ngIf="selectedProject === 'projeto5'" class="box-project">
+    
+    <div class="content">
+      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
+        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
+
+        <swiper-slide>
+          <div class="content ion-padding-horizontal">
+            <h4>Aplicativo desenvolvido para aprender conceitos básicos de consumo de uma API</h4>
+
+            <div id="deploy-box">
+              <p>Deploy em: <a href="https://pokedex-api2.netlify.app/home" target="_blank">
+                https://pokedex-api2.netlify.app/home</a></p>
+              <p>Disponívem em: <a href="https://github.com/T0ntow/poke-api" target="_blank"> https://github.com/T0ntow/poke-api</a></p>
+            </div>
+
+            <div id="tecnologias">
+              <ion-icon class="logo" name="logo-ionic"></ion-icon>
+              <ion-icon class="logo" name="logo-angular"></ion-icon>
+              <ion-icon class="logo" name="logo-sass"></ion-icon>
+            </div>
+          </div>
+
+        </swiper-slide>
+
+        <swiper-slide *ngFor="let image of imagesPokedex">
+          <img [src]="image">
+        </swiper-slide>
+
+      </swiper-container>
+    </div>
+  </div>
+
 
 </div>
