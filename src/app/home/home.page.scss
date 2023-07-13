@@ -11,13 +11,13 @@
 }
 
 $contrast: #5260ff;
-  
+
 @keyframes show {
-  from{
+  from {
     transform: translateX(-40%);
   }
 
-  to{
+  to {
     transform: translateX(0);
   }
 }
@@ -31,9 +31,8 @@ $contrast: #5260ff;
 .show {
   opacity: 1;
   filter: blur(0px);
-  animation: show .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation: show 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
 
 ion-header {
   display: flex;
@@ -42,13 +41,13 @@ ion-header {
   position: absolute;
   z-index: 100;
 
-  padding: 15px 25px;
+  padding: 15px;
 
   background-color: rgba(0, 0, 0, 0.204);
   box-shadow: 0px 10px 10px -2px rgba(0, 0, 0, 0.33);
 
   .nav {
-    font-size: 1.1rem;
+    font-size: clamp(.75rem, 3vw, 1.1rem);
     cursor: pointer;
 
     position: relative;
@@ -72,14 +71,13 @@ ion-header {
 
   div {
     ion-label {
-      margin: 0px 20px;
+      margin: 0px 10px;
     }
   }
 }
 
 ion-content {
-  --ion-background-color:#1b1b1b;
-
+  --ion-background-color: #1b1b1b;
 
   #section-home {
     height: 100vh;
@@ -115,10 +113,9 @@ ion-content {
       ion-title {
         font-family: "Bungee Shade", cursive;
         font-style: normal;
-        font-size: 3.5rem;
+        font-size: clamp(1.5rem, 5vw, 3.2rem);
 
         text-transform: uppercase;
-        width: 100%;
 
         white-space: nowrap;
         overflow: hidden;
@@ -131,14 +128,13 @@ ion-content {
     }
 
     #subtitle-box {
-      font-size: 1.4rem;
-
       display: flex;
       justify-content: space-around;
 
       h3 {
         width: 60%;
         text-align: left;
+        font-size: clamp(.9rem, 3vw, 1.3rem);
       }
 
       #logos {
@@ -147,8 +143,9 @@ ion-content {
 
         .logo {
           margin: 0px 10px;
-          height: 40px;
-          width: 40px;
+         
+          width: clamp(25px, 3vw, 50px);
+          height: clamp(25px, 3vw, 50px);
 
           cursor: pointer;
         }
@@ -158,6 +155,19 @@ ion-content {
           color: var(--contrast);
         }
       }
+    }
+
+  }
+
+  @media screen and (max-width: 1200px) {
+    #sobre {
+      width: 80vw;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    #sobre {
+      width: 95vw;
     }
   }
 
@@ -169,10 +179,10 @@ ion-content {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-  } 
+  }
 
   .divisao::after {
-    content: '';
+    content: "";
 
     position: absolute;
     height: 1px;
@@ -183,7 +193,6 @@ ion-content {
     right: 0;
     margin: 0px auto;
   }
-
 
   #section-projects {
     height: 100vh;
@@ -218,7 +227,12 @@ ion-content {
       width: 1px;
       height: 150vh;
       background-color: #5260ff;
+    }
 
+    @media screen and (max-width: 750px) {
+      #linha {
+        display: none;
+      }
     }
 
     ion-title {
@@ -230,14 +244,14 @@ ion-content {
 
       z-index: -10;
     }
-    
+
     ion-card {
       height: 230px;
       padding: 20px;
 
-      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 
       ion-card-title {
         color: var(--contrast);
@@ -249,30 +263,61 @@ ion-content {
       }
     }
 
+    @media screen and (max-width: 1200px) {
+      ion-card {
+        ion-card-title {
+          font-size: 1rem;
+        }
+        ion-card-content {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
     #year-2023 {
       position: absolute;
-      left: 15%;
-      width: 33%;
-
+      left: 10%;
+      width: 38%;
     }
 
     #year-2022 {
-      width: 33%;
+      width: 38%;
 
       position: absolute;
       top: 350px;
-      right: 15%;
+      right: 10%;
     }
 
     #year-2021 {
-      width: 33%;
+      width: 38%;
 
       position: absolute;
       top: 740px;
-      left: 15%;
+      left: 10%;
     }
-  }
 
+    @media screen and (max-width: 950px) {
+      #year-2023,
+      #year-2021 {
+        left: 5%;
+      }
+
+      #year-2022 {
+        right: 5%;
+      }
+    }
+    
+    @media screen and (max-width: 850px) {
+      #year-2023,
+      #year-2022,
+      #year-2021{
+        left: 5%;
+        width: 90%;
+      }
+    
+    }
+    
+  }
 
   @keyframes asc {
     from {
