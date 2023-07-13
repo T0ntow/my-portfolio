@@ -213,7 +213,7 @@ ion-content {
   }
 
   #section-linha-tempo {
-    height: 150vh;
+    height: 170vh;
     background: #1b1b1b;
 
     position: relative;
@@ -225,7 +225,7 @@ ion-content {
 
       margin: 0px auto;
       width: 1px;
-      height: 150vh;
+      height: 160vh;
       background-color: #5260ff;
     }
 
@@ -246,7 +246,6 @@ ion-content {
     }
 
     ion-card {
-      height: 230px;
       padding: 20px;
 
       -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -284,7 +283,7 @@ ion-content {
       width: 38%;
 
       position: absolute;
-      top: 350px;
+      top: 400px;
       right: 10%;
     }
 
