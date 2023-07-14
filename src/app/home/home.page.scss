@@ -119,7 +119,7 @@ ion-content {
 
         white-space: nowrap;
         overflow: hidden;
-        animation: type 4s steps(60, end);
+        animation: type 4s steps(18, end);
       }
 
       span {
@@ -318,23 +318,14 @@ ion-content {
     
   }
 
-  @keyframes asc {
-    from {
-      transform: scaleX(0);
-    }
-
-    to {
-      transform: scaleX(1);
-    }
-  }
 }
 
 @keyframes type {
   from {
-    width: 10%;
+    width: 0%;
   }
   to {
-    width: 100%;
+    width: 18ch;
   }
 }
 

@@ -100,7 +100,7 @@
 
           #deploy-box {
             flex-direction: column;
-            font-size: clamp(.8rem, -1.5rem + 8vw, 1.3rem);
+            font-size: clamp(.8rem, 2vw, 1.3rem);
 
             a {
               color: var(--contrast);
@@ -109,7 +109,8 @@
 
           h4 {
             width: 100%;
-            font-size: clamp(.8rem, -1.5rem + 8vw, 1.3rem);
+            font-size: clamp(.8rem, 2vw, 1.3rem);
+
             flex-shrink: 0;
             display: flex;
             align-items: center;
