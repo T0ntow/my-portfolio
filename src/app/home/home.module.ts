@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 //components:
 import { ProjectsComponent } from '../components/projects/projects.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { CoursesComponent } from '../components/courses/courses.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ContactComponent } from '../components/contact/contact.component';
   declarations: [
     HomePage,
     ProjectsComponent,
-    ContactComponent],
+    ContactComponent,
+    CoursesComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]

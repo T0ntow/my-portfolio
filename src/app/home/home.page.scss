@@ -10,8 +10,6 @@
   }
 }
 
-$contrast: #5260ff;
-
 @keyframes show {
   from {
     transform: translateX(-40%);
@@ -204,6 +202,15 @@ ion-content {
   }
 
   #section-contato {
+    height: 100vh;
+    background: #1b1b1b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #section-courses {
     height: 100vh;
     background: #1b1b1b;
 

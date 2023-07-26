@@ -1,3 +1,4 @@
+
 #box-projects {
   background-color: #fff;
 
@@ -32,7 +33,7 @@
       }
 
       .selected {
-        color: var(--contrast);
+        color: #6a64ff;
       }
     }
   }
@@ -103,7 +104,7 @@
             font-size: clamp(.8rem, 2vw, 1.3rem);
 
             a {
-              color: var(--contrast);
+              color: #6a64ff;
             }
           }
 
