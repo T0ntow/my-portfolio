@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    {{name}}
+
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="cancel()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ngx-extended-pdf-viewer [src]="'/assets/curso-pyton.pdf'"></ngx-extended-pdf-viewer>
+</ion-content>

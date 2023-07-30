@@ -13,6 +13,11 @@ import { ProjectsComponent } from '../components/projects/projects.component';
 import { ContactComponent } from '../components/contact/contact.component';
 import { CoursesComponent } from '../components/courses/courses.component';
 
+//modal
+import { ModalCourseComponent } from '../modal-course/modal-course.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
+//pdf
 @NgModule({
   imports: [
     CommonModule,
@@ -20,12 +25,14 @@ import { CoursesComponent } from '../components/courses/courses.component';
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
+    NgxExtendedPdfViewerModule
   ],
   declarations: [
     HomePage,
     ProjectsComponent,
     ContactComponent,
-    CoursesComponent],
+    CoursesComponent,
+    ModalCourseComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
