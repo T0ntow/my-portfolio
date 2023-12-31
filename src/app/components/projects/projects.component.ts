@@ -8,8 +8,9 @@ import Swiper from 'swiper'
 })
 export class ProjectsComponent implements OnInit {
   swiper?: Swiper;
-
   @ViewChild('') swiperElement: ElementRef | undefined;
+
+  window = window
 
   constructor(
   ) { }

@@ -1,7 +1,7 @@
 <ion-title>Projetos</ion-title>
 
-<div id="box-projects">
-  <ion-list>
+<div id="box-projects"  [ngClass]="{'mobile': window.innerWidth <= 600}">
+  <ion-list class="list-web" *ngIf="window.innerWidth >= 600; else mobile">
     <ion-item color="transparent" lines="none" button>
       <ion-label [ngClass]="{'selected': selectedProject === 'projeto1'}" (click)="toggleProject('projeto1')"
         id="projeto1">Wallet Manager</ion-label>
@@ -21,13 +21,35 @@
     </ion-item>
   </ion-list>
 
+  <ng-template #mobile>
+    <ion-list class="list-mobile">
+      <ion-item color="transparent" lines="none" button>
+        <ion-label [ngClass]="{'selected': selectedProject === 'projeto1'}" (click)="toggleProject('projeto1')"
+          id="projeto1">Wallet Manager</ion-label>
+      </ion-item>
+      <ion-item color="transparent" lines="none" button>
+        <ion-label [ngClass]="{'selected': selectedProject === 'projeto2'}" (click)="toggleProject('projeto2')"
+          id="projeto2">Controle Estoque</ion-label>
+      </ion-item>
+      <ion-item color="transparent" lines="none" button>
+        <ion-label [ngClass]="{'selected': selectedProject === 'projeto3'}" (click)="toggleProject('projeto3')">Conversor Romano</ion-label>
+      </ion-item>
+      <ion-item color="transparent" lines="none" button>
+        <ion-label [ngClass]="{'selected': selectedProject === 'projeto4'}" (click)="toggleProject('projeto4')">TTOW Eletronics</ion-label>
+      </ion-item>
+      <ion-item color="transparent" lines="none" button>
+        <ion-label [ngClass]="{'selected': selectedProject === 'projeto5'}" (click)="toggleProject('projeto5')">Pokedex</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+  
   <div *ngIf="selectedProject === 'projeto1'" class="box-project">
-    <div class="content">
+    <div class="content"  [ngClass]="{'content-mobile': window.innerWidth <= 600}">
       <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
         [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
 
         <swiper-slide>
-          <div class="content ion-padding-horizontal">
+          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
             <h4>Applicativo completo para gerenciar seus gastos em diferentes carteias, com gráficos e categorias
               para uma melhor experiência</h4>
             <div id="deploy-box">
@@ -53,13 +75,12 @@
   </div>
 
   <div *ngIf="selectedProject === 'projeto2'" class="box-project">
-    
-    <div class="content">
+    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
       <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
         [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
 
         <swiper-slide>
-          <div class="content ion-padding-horizontal">
+          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
             <h4>Applicativo desenvolvido para treinar SQL e Express, perfeito para gerenciar produtos de um estoque de qualquer empresa, com vários filtros e pesquisa</h4>
 
             <div id="deploy-box">
@@ -89,12 +110,12 @@
 
   <div *ngIf="selectedProject === 'projeto3'" class="box-project">
     
-    <div class="content">
+    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
       <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
         [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
 
         <swiper-slide>
-          <div class="content ion-padding-horizontal">
+          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
             <h4>Conversor de algarismos romanos para decimais e vice-versa</h4>
 
             <div id="deploy-box">
@@ -121,12 +142,12 @@
 
   <div *ngIf="selectedProject === 'projeto4'" class="box-project">
     
-    <div class="content">
+    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
       <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
         [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
 
         <swiper-slide>
-          <div class="content ion-padding-horizontal">
+          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
             <h4>Aplicativo desenvolvido quando estive iniciando no mundo dos frameworks, com várias funcionalidades como sistema de login, cadastro de produtos e sistema de busca</h4>
 
             <div id="deploy-box">
@@ -154,12 +175,12 @@
 
   <div *ngIf="selectedProject === 'projeto5'" class="box-project">
     
-    <div class="content">
+    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
       <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
         [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
 
         <swiper-slide>
-          <div class="content ion-padding-horizontal">
+          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
             <h4>Aplicativo desenvolvido para aprender conceitos básicos de consumo de uma API</h4>
 
             <div id="deploy-box">
@@ -184,6 +205,4 @@
       </swiper-container>
     </div>
   </div>
-
-
 </div>

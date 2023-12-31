@@ -118,6 +118,7 @@ ion-content {
         white-space: nowrap;
         overflow: hidden;
         animation: type 4s steps(18, end);
+        color: #fff;
       }
 
       span {
@@ -128,6 +129,7 @@ ion-content {
     #subtitle-box {
       display: flex;
       justify-content: space-around;
+      color: #fff;
 
       h3 {
         width: 60%;
@@ -220,7 +222,7 @@ ion-content {
   }
 
   #section-linha-tempo {
-    height: 170vh;
+    height: 150vh;
     background: #1b1b1b;
 
     position: relative;
@@ -232,7 +234,7 @@ ion-content {
 
       margin: 0px auto;
       width: 1px;
-      height: 160vh;
+      height: 140vh;
       background-color: #5260ff;
     }
 
