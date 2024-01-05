@@ -43,9 +43,10 @@ ion-header {
 
   background-color: rgba(0, 0, 0, 0.204);
   box-shadow: 0px 10px 10px -2px rgba(0, 0, 0, 0.33);
+  color: #fff;
 
   .nav {
-    font-size: clamp(.75rem, 3vw, 1.1rem);
+    font-size: clamp(0.75rem, 3vw, 1.1rem);
     cursor: pointer;
 
     position: relative;
@@ -134,7 +135,7 @@ ion-content {
       h3 {
         width: 60%;
         text-align: left;
-        font-size: clamp(.9rem, 3vw, 1.3rem);
+        font-size: clamp(0.9rem, 3vw, 1.3rem);
       }
 
       #logos {
@@ -143,7 +144,7 @@ ion-content {
 
         .logo {
           margin: 0px 10px;
-         
+
           width: clamp(25px, 3vw, 50px);
           height: clamp(25px, 3vw, 50px);
 
@@ -156,7 +157,6 @@ ion-content {
         }
       }
     }
-
   }
 
   @media screen and (max-width: 1200px) {
@@ -222,27 +222,15 @@ ion-content {
   }
 
   #section-linha-tempo {
-    height: 150vh;
     background: #1b1b1b;
+    padding: 20px;
 
-    position: relative;
-
-    #linha {
-      position: absolute;
-      left: 0;
-      right: 0;
-
-      margin: 0px auto;
-      width: 1px;
-      height: 140vh;
-      background-color: #5260ff;
-    }
-
-    @media screen and (max-width: 850px) {
-      #linha {
-        display: none;
-      }
-    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 50px;
 
     ion-title {
       font-size: 3.5rem;
@@ -260,7 +248,6 @@ ion-content {
       -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-
       ion-card-title {
         color: var(--contrast);
       }
@@ -282,51 +269,32 @@ ion-content {
       }
     }
 
+    #year-2023,
+    #year-2022,
+    #year-2021 {
+      width: 100%;
+    }
+
     #year-2023 {
-      position: absolute;
-      left: 10%;
-      width: 38%;
+      grid-area: 1 / 1 / 2 / 2;
     }
 
     #year-2022 {
-      width: 38%;
-
-      position: absolute;
-      top: 400px;
-      right: 10%;
+      grid-area: 2 / 2 / 3 / 3;
     }
 
     #year-2021 {
-      width: 38%;
-
-      position: absolute;
-      top: 740px;
-      left: 10%;
+      grid-area: 3 / 1 / 3 / 1;
     }
 
-    @media screen and (max-width: 950px) {
-      #year-2023,
-      #year-2021 {
-        left: 5%;
-      }
-
-      #year-2022 {
-        right: 5%;
-      }
-    }
-    
     @media screen and (max-width: 850px) {
       #year-2023,
       #year-2022,
-      #year-2021{
-        left: 5%;
+      #year-2021 {
         width: 90%;
       }
-    
     }
-    
   }
-
 }
 
 @keyframes type {
