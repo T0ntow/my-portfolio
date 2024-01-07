@@ -12,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProjectsComponent } from '../components/projects/projects.component';
 import { ContactComponent } from '../components/contact/contact.component';
 import { CoursesComponent } from '../components/courses/courses.component';
-
+import { HeaderComponent } from '../components/header/header.component';
+import { LinhaDoTempoComponent } from '../components/linha-do-tempo/linha-do-tempo.component';
 //modal
 import { ModalCourseComponent } from '../modal-course/modal-course.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
@@ -32,7 +33,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     ProjectsComponent,
     ContactComponent,
     CoursesComponent,
-    ModalCourseComponent],
+    ModalCourseComponent,
+    HeaderComponent,
+    LinhaDoTempoComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]

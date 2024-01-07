@@ -1,0 +1,72 @@
+#section-linha-tempo {
+  background: #1b1b1b;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap: 50px 0;
+
+  @media screen and (max-width: 1200px) {
+    display: flex;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+
+  ion-title {
+    letter-spacing: 4px;
+
+    color: #ffffff;
+    text-shadow: 2px 3px #555555;
+
+    font-family: "Bungee", cursive;
+    z-index: -10;
+  }
+
+  ion-card {
+    padding: 20px;
+
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+    ion-card-title {
+      color: var(--contrast);
+      font-weight: bold;
+      font-family: "Bungee", cursive;
+    }
+
+    ion-card-content {
+      margin: 25px 0px;
+      color: #1b1b1b;
+      font-family: "Bungee", cursive;
+    }
+  }
+
+  #year-2023,
+  #year-2022,
+  #year-2021 {
+    width: 100%;
+
+    ion-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  #year-2023 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  #year-2022 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  #year-2021 {
+    grid-area: 3 / 1 / 3 / 1;
+  }
+
+}

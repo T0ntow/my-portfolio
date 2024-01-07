@@ -32,69 +32,14 @@
   animation: show 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-ion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  z-index: 100;
-
-  padding: 15px;
-
-  background-color: rgba(0, 0, 0, 0.204);
-  box-shadow: 0px 10px 10px -2px rgba(0, 0, 0, 0.33);
-  color: #fff;
-
-  .nav {
-    font-size: clamp(0.75rem, 3vw, 1.1rem);
-    cursor: pointer;
-
-    position: relative;
-  }
-
-  .nav::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--contrast);
-    transform: scaleX(0);
-    transition: transform 0.25s ease-in-out;
-  }
-
-  .nav:hover::after {
-    transform: scaleX(1);
-  }
-
-  div {
-    ion-label {
-      margin: 0px 10px;
-    }
-  }
-}
-
 ion-content {
   --ion-background-color: #1b1b1b;
 
   #section-home {
     height: 100vh;
-    background-color: black;
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    #img2 {
-      filter: opacity(0.3);
-    }
+    background: rgb(23,19,79);
+background: radial-gradient(circle, rgba(23,19,79,1) 0%, rgba(0,0,0,0.9921218487394958) 100%);
   }
 
   #sobre {
@@ -219,81 +164,6 @@ ion-content {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  #section-linha-tempo {
-    background: #1b1b1b;
-    padding: 20px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    gap: 50px;
-
-    ion-title {
-      font-size: 3.5rem;
-      letter-spacing: 4px;
-
-      color: #ffffff;
-      text-shadow: 2px 3px #555555;
-
-      z-index: -10;
-    }
-
-    ion-card {
-      padding: 20px;
-
-      -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-      ion-card-title {
-        color: var(--contrast);
-      }
-
-      ion-card-content {
-        margin: 25px 0px;
-        color: #1b1b1b;
-      }
-    }
-
-    @media screen and (max-width: 1200px) {
-      ion-card {
-        ion-card-title {
-          font-size: 1rem;
-        }
-        ion-card-content {
-          font-size: 0.7rem;
-        }
-      }
-    }
-
-    #year-2023,
-    #year-2022,
-    #year-2021 {
-      width: 100%;
-    }
-
-    #year-2023 {
-      grid-area: 1 / 1 / 2 / 2;
-    }
-
-    #year-2022 {
-      grid-area: 2 / 2 / 3 / 3;
-    }
-
-    #year-2021 {
-      grid-area: 3 / 1 / 3 / 1;
-    }
-
-    @media screen and (max-width: 850px) {
-      #year-2023,
-      #year-2022,
-      #year-2021 {
-        width: 90%;
-      }
-    }
   }
 }
 

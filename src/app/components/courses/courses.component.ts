@@ -15,17 +15,5 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  async openModal(name: string) {
-    console.log("open modal");
-    
-    const modal = await this.modalCtrl.create({
-      component: ModalCourseComponent,
-      componentProps: {
-        name: name
-      }
-    });
-    modal.present();
-  }
 }
 

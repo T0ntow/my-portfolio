@@ -3,25 +3,11 @@
   @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=swap');
 </style>
 
-<ion-header>
-  <ion-label id="home" class="nav" (click)="scrollToSection('section-home')">Inicio</ion-label>
-
-  <div>
-    <ion-label class="nav" (click)="scrollToSection('section-projects')">Projetos</ion-label>
-    <ion-label class="nav" (click)="scrollToSection('section-courses')">Cursos</ion-label>
-    <ion-label class="nav" (click)="scrollToSection('section-contato')">Contato</ion-label>
-  </div>
-
-</ion-header>
+<app-header></app-header>
 
 <ion-content #observer>
-
   <section id="section-home">
-    <img id="img1" src="/assets/images/back.png" alt="Imagem 1">
-    <img id="img2" src="/assets/images/back2.png" alt="Imagem 2">
-
     <div id="sobre">
-
       <div id="title-box">
         <ion-title>Frontend Developer<span> |</span></ion-title>
       </div>
@@ -41,7 +27,6 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -59,47 +44,7 @@
   
   <div class="divisao"></div>
 
-  <section id="section-linha-tempo">
-    <div id="year-2023" #observer class="observer">
-      <ion-title>2023</ion-title>
-      <ion-card color="dark">
-        <ion-card-header>
-          <ion-card-title>Apredendo mais tecnologias</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Foi aqui que comecei a estudar mais tecnologias, comecei com Vue.js e logo depois parti para Angular e Ionic. Estas novas tecnologias foram essenciais para alavancar meu conhecimento e minha vontade de aprender. 
-        </ion-card-content>
-      </ion-card>
-    </div>
-    
-    <div id="year-2022" #observer class="observer">
-      <ion-title>2022</ion-title>
-      <ion-card color="dark">
-        <ion-card-header>
-          <ion-card-title>Desenvolvendo meu JavaScript</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Passei para Sistemas de Informação no IFBA, comecei a estudar java pela faculdade, porém meu foca ainda era desenvolvimento web com JavaScript.
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-    <div id="year-2021" #observer class="observer"> 
-      <ion-title>2021</ion-title>
-      <ion-card color="dark">
-        <ion-card-header>
-          <ion-card-title>Começando no mundo da programação</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Comecei a estudar html e css ainda no ensino médio criando alguns templates para treinar e aplicar meu conhecimento. 
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-  </section>
+  <app-linha-do-tempo></app-linha-do-tempo>
 
   <div class="divisao"></div>
   

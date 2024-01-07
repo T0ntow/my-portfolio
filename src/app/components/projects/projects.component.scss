@@ -2,15 +2,15 @@ ion-title {
   color: #fff;
 }
 
-#box-projects {
+.box-projects {
   background-color: #fff;
 
   display: flex;
   justify-content: space-between;
-  
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -26,18 +26,18 @@ ion-title {
 
     z-index: 100;
 
+
     ion-item {
       width: 100%;
 
       ion-label {
-        color: #000;
-        font-family: "Bungee", cursive;
         text-align: center;
+        font-family: "Bungee", cursive;
       }
+    }
 
-      .selected {
-        color: #6a64ff;
-      }
+    .selected {
+      color: #6a64ff;
     }
   }
 
@@ -46,7 +46,6 @@ ion-title {
       width: 30vw;
 
       ion-item {
-
         ion-label {
           font-size: 15px;
         }
@@ -64,17 +63,15 @@ ion-title {
       filter: blur(0px);
     }
   }
-  
+
   .box-project {
     display: flex;
     justify-content: space-between;
     display: block;
     height: 70vh;
 
-    animation: show .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: show 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-
-    
     .content {
       height: 100%;
       width: 50vw;
@@ -142,34 +139,43 @@ ion-title {
           }
         }
       }
-
     }
 
     @media screen and (max-width: 850px) {
       .content {
         width: 65vw;
       }
-   
     }
   }
 }
 
-
 .mobile {
-  display: flex; 
-  flex-direction: column !important; 
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0;
 
   .list-mobile {
-    width: 100%;
+    width: 90%;
     max-width: 100vw;
     display: flex;
     flex-direction: row;
+    margin: 20px auto;
+    border-radius: 5px;
 
     background-color: #d0d0d0;
     overflow-x: auto;
 
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.75);
+
     ion-item {
       overflow: visible;
+    }
+
+    .selected {
+      color: #6a64ff;
     }
   }
 }

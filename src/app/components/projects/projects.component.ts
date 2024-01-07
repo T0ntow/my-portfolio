@@ -40,24 +40,12 @@ export class ProjectsComponent implements OnInit {
   }
 
   imagesWallet = [
-    '/assets/images/wallet-tablet-celular.png',
-    '/assets/images/wallet-pc.png',
+    '/assets/images/wallet-manager/wallet-tablet-celular.png',
+    '/assets/images/wallet-manager/wallet-pc.png',
   ]
 
   imagesControleEstoque = [
-    '/assets/images/controle-estoque.png',
-  ]
-
-  imagesConversor = [
-    '/assets/images/conversor-romano.png',
-  ]
-
-  imagesTtow = [
-    '/assets/images/toow2.png',
-  ]
-  
-  imagesPokedex = [
-    '/assets/images/pokedex.png',
+    '/assets/images/controle-estoque/controle-estoque.png',
   ]
 
 }

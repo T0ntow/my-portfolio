@@ -19,13 +19,6 @@ export class HomePage implements OnInit {
     this.observeContent();
   }
 
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   registerSwiper() {
     register();
   }
