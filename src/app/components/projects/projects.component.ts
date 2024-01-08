@@ -36,7 +36,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   swiperSlideChange(e: any) {
-    console.log("changed", e);
+    // console.log("changed", e);
   }
 
   imagesWallet = [

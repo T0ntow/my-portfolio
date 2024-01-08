@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { EmailService } from 'src/app/services/email.service';
 
 @Component({
@@ -9,13 +9,14 @@ import { EmailService } from 'src/app/services/email.service';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-
   emailForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private alertController: AlertController,
-    private emailService: EmailService
+    private emailService: EmailService,
+    private toastController: ToastController,
+    private loadingController: LoadingController
   ) {
     this.emailForm = this.formBuilder.group({
       from: ['', Validators.required],
@@ -27,76 +28,48 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() { }
 
-  // sendEmail() {
-  //   console.log("send email");
+  async sendEmail() {
+    if (this.emailForm.valid) {
+      const loading = await this.loadingController.create({
+        message: 'Enviando mensagem...',
+        spinner: 'crescent',
+        translucent: true,
+      });
+  
+      await loading.present();
 
-  //   if (this.emailForm.invalid) {
-  //     return;
-  //   }
+      const emailData = {
+        from: this.emailForm.value.from,
+        to: 'wellingtonbs109@gmail.com',
+        nome: this.emailForm.value.nome,
+        texto: this.emailForm.value.texto
+      };
 
-  //   const emailData = {
-  //     from: this.emailForm.value.from,
-  //     to: 'wellingtonbs109@gmail.com',
-  //     nome: this.emailForm.value.nome,
-  //     texto: this.emailForm.value.texto
-  //   };
+      this.emailService.sendEmail(emailData).subscribe({
+        next: (response) => {
+          this.presentToast("Email enviado com sucesso", "success")
+          loading.dismiss();
+          this.emailForm.reset()
+        },
+        error: (error) => {
+          this.presentToast("Falha ao enviar o e-mail", "danger")
+          loading.dismiss();
+          this.emailForm.reset()
+        }
+      });
 
-  //   console.log(emailData);
-
-  //   // Fazer uma solicitação POST para o servidor
-  //   fetch('http://localhost:3002/enviar-email', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(emailData)
-  //   })
-  //     .then(response => response.text())
-  //     .then(async data => {
-  //       console.log(data); // Mensagem de resposta do servidor
-  //       this.emailForm.reset();
-  //       const alert = await this.alertController.create({
-  //         cssClass: "alert",
-  //         header: 'Email enviado com sucesso',
-  //         buttons: ['OK'],
-  //       });
-
-  //       await alert.present();
-
-  //     })
-  //     .catch(async error => {
-  //       console.error(error); // Tratamento de erros
-  //       const alert = await this.alertController.create({
-  //         cssClass: "alert",
-  //         header: 'Falha ao enviar email',
-  //         buttons: ['OK'],
-  //       });
-
-  //       await alert.present();
-  //     });
-  // }
-
-  sendEmail() {
-    if (this.emailForm.invalid) {
-      return;
+    } else {
+      this.presentToast("Por favor preencha o formulário corretamente!", "danger")
     }
-
-    const emailData = {
-      from: this.emailForm.value.from,
-      to: 'wellingtonbs109@gmail.com',
-      nome: this.emailForm.value.nome,
-      texto: this.emailForm.value.texto
-    };
-
-    this.emailService.sendEmail(emailData).subscribe({
-      next: (response) => {
-        console.log(response);
-      },
-      error: (error) => {
-        console.error(error);
-      }
-    });
   }
 
+  async presentToast(text: string, color:string) {
+    const toast = await this.toastController.create({
+      message: text,
+      color: color,
+      duration: 2000
+    });
+    toast.present();
+  }
 
 }

@@ -12,7 +12,7 @@ export class EmailService {
   ) { }
 
   sendEmail(emailData: any) {
-    return this.http.post('http://localhost:3000/send-email', emailData)
+    return this.http.post('https://node-mysql-api-exw0.onrender.com/send-email', emailData)
   }
 
 }
