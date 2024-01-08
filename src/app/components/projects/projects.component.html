@@ -8,6 +8,14 @@
     <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto2')" [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
       <ion-label>Controle Estoque</ion-label>
     </ion-item>
+
+    <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto3')" [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
+      <ion-label>Pet club</ion-label>
+    </ion-item>
+
+    <ion-item color="transparent" lines="none">
+      <ion-label>Mais projetos em: <a href="https://github.com/T0ntow" target="_blank">Github</a></ion-label>
+    </ion-item>
   </ion-list>
   
 
@@ -19,6 +27,14 @@
       <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto2')" [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
         <ion-label>Controle Estoque</ion-label>
       </ion-item>
+
+      <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto3')" [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
+        <ion-label>Pet club</ion-label>
+      </ion-item>
+  
+      <ion-item color="transparent" lines="none">
+        <ion-label>Mais projetos em: <a href="https://github.com/T0ntow" target="_blank">Github</a></ion-label>
+      </ion-item>
     </ion-list>
   </ng-template>
   
@@ -29,8 +45,7 @@
 
         <swiper-slide>
           <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-            <h4>Applicativo completo para gerenciar seus gastos em diferentes carteias, com gráficos e categorias
-              para uma melhor experiência</h4>
+            <h4>Aplicativo abrangente desenvolvido para gerenciar suas despesas em diversas carteiras, proporcionando uma experiência aprimorada. Inclui recursos gráficos e categorias que visam otimizar a organização e análise dos seus gastos.</h4>
             <div id="deploy-box">
               <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
                   https://wallet-manager2.netlify.app/home</a></p>
@@ -42,7 +57,6 @@
               <ion-icon class="logo" name="logo-sass"></ion-icon>
             </div>
           </div>
-
         </swiper-slide>
 
         <swiper-slide *ngFor="let image of imagesWallet">
@@ -60,7 +74,7 @@
 
         <swiper-slide>
           <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-            <h4>Applicativo desenvolvido para treinar SQL e Express, perfeito para gerenciar produtos de um estoque de qualquer empresa, com vários filtros e pesquisa</h4>
+            <h4>Aplicativo projetado para aprimorar minhas habilidades em SQL e NodeJS, ideal para a gestão eficiente de produtos em estoques de diversas empresas. Oferece uma ampla gama de recursos, incluindo diversos filtros e uma poderosa função de pesquisa para facilitar a navegação e a manipulação de dados.</h4>
 
             <div id="deploy-box">
               <p>Deploy em: <a href="https://controle-estoque-sql.netlify.app/home" target="_blank">
@@ -72,11 +86,46 @@
               <ion-icon class="logo" name="logo-angular"></ion-icon>
               <ion-icon class="logo" name="logo-ionic"></ion-icon>
               <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
-              <img  class="logo"  src="/assets/images/express.png" alt="">
+              <ion-icon  class="logo" name="logo-nodejs"></ion-icon>
               <ion-icon class="logo" name="logo-sass"></ion-icon>
             </div>
           </div>
+        </swiper-slide>
 
+        <swiper-slide *ngFor="let image of imagesControleEstoque">
+          <img [src]="image">
+        </swiper-slide>
+
+      </swiper-container>
+    </div>
+  </div>
+
+
+  <div *ngIf="selectedProject === 'projeto3'" class="box-project">
+    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
+      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
+        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
+
+        <swiper-slide>
+          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
+            <h4>Aplicativo desenvolvido como projeto final da disciplina de Processos e Desenvolvimento de Sistemas, abrangendo todas as etapas desde a concepção no Figma até a implementação do projeto no VS Code. Essencial para compreender a utilidade dos processos ao longo do caminho até a conclusão.</h4>
+
+            <div id="deploy-box">
+              <p>Deploy em: <a href="https://pet-club.netlify.app/home" target="_blank">
+                https://pet-club.netlify.app/home</a></p>
+              <p>Disponívem em: <a href="https://github.com/T0ntow/pet-club" target="_blank"> https://https://github.com/T0ntow/pet-club</a></p>
+            </div>
+
+            <div id="tecnologias">
+              <ion-icon class="logo" name="logo-angular"></ion-icon>
+              <ion-icon class="logo" name="logo-ionic"></ion-icon>
+              <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
+              <ion-icon class="logo" name="logo-firebase"></ion-icon>
+
+              <ion-icon  class="logo" name="logo-nodejs"></ion-icon>
+              <ion-icon class="logo" name="logo-sass"></ion-icon>
+            </div>
+          </div>
         </swiper-slide>
 
         <swiper-slide *ngFor="let image of imagesControleEstoque">
