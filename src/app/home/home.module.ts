@@ -17,7 +17,7 @@ import { LinhaDoTempoComponent } from '../components/linha-do-tempo/linha-do-tem
 //modal
 import { ModalCourseComponent } from '../modal-course/modal-course.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-
+import { HttpClientModule } from '@angular/common/http';
 //pdf
 @NgModule({
   imports: [
@@ -26,7 +26,8 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
+    HttpClientModule
   ],
   declarations: [
     HomePage,
