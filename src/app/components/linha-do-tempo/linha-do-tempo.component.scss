@@ -68,5 +68,26 @@
   #year-2021 {
     grid-area: 3 / 1 / 3 / 1;
   }
+}
 
+.observer {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1.2s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  animation: show 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes show {
+  from {
+    transform: translateY(-40%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }

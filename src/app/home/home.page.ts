@@ -24,15 +24,12 @@ export class HomePage implements OnInit {
   }
 
   observeContent() {
-    console.log("observeContent");
-
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
 
         } else {
-          // Remove a classe 'fade-in' se o componente não estiver visível
           entry.target.classList.remove('show');
   
         }
