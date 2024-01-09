@@ -12,7 +12,7 @@ ion-header {
     color: #fff;
   
     .nav {
-      font-size: clamp(0.75rem, 3vw, 1.1rem);
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
       cursor: pointer;
   
       position: relative;
@@ -33,7 +33,18 @@ ion-header {
     .nav:hover::after {
       transform: scaleX(1);
     }
-  
+
+    summary {
+      margin-right: 30px;
+    }
+    
+    .details {
+      display: flex; 
+      flex-direction: column; 
+      position: absolute; 
+      right: 30px;
+    }
+
     div {
       ion-label {
         margin: 0px 10px;

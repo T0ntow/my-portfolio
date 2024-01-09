@@ -1,9 +1,23 @@
 <ion-header>
   <ion-label id="home" class="nav" (click)="scrollToSection('section-home')">Inicio</ion-label>
 
-  <div>
+  <div *ngIf="pegarLargura() >= 500; else mobileContent">
     <ion-label class="nav" (click)="scrollToSection('section-projects')">Projetos</ion-label>
     <ion-label class="nav" (click)="scrollToSection('section-courses')">Cursos</ion-label>
+    <ion-label class="nav" (click)="scrollToSection('section-linha-tempo')">Linha do tempo</ion-label>
     <ion-label class="nav" (click)="scrollToSection('section-contato')">Contato</ion-label>
   </div>
+
+  <ng-template #mobileContent>
+    <details>
+      <summary class="nav">Navegar</summary>
+      <div class="details">
+        <ion-label class="nav" (click)="scrollToSection('section-projects')">Projetos</ion-label>
+        <ion-label class="nav" (click)="scrollToSection('section-courses')">Cursos</ion-label>
+        <ion-label class="nav" (click)="scrollToSection('section-linha-tempo')">Linha do tempo</ion-label>
+        <ion-label class="nav" (click)="scrollToSection('section-contato')">Contato</ion-label>
+      </div>
+    </details>
+  </ng-template>
+  
 </ion-header>

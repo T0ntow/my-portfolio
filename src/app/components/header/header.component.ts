@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent  implements OnInit {
 
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  pegarLargura() {
+    return document.querySelector("ion-header")!.clientWidth;
+  }
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
