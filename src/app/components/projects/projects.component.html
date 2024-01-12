@@ -3,22 +3,23 @@
 <div class="box-projects" [ngClass]="{'mobile': window.innerWidth <= 600}">
   <ion-list class="list-web" *ngIf="window.innerWidth >= 600; else mobile">
     <ion-item color="transparent" lines="none" button (click)="toggleProject(0)"
-      [ngClass]="{'selected': selectedProject === 'projeto1'}" id="projeto1">
+      [ngClass]="{'selected': selectedProject === 'wallet-manager'}" id="projeto1">
       <ion-label>Wallet Manager</ion-label>
     </ion-item>
     <ion-item color="transparent" lines="none" button (click)="toggleProject(1)"
-      [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
+      [ngClass]="{'selected': selectedProject === 'controle-estoque'}" id="projeto2">
       <ion-label>Controle Estoque</ion-label>
     </ion-item>
 
     <ion-item color="transparent" lines="none" button (click)="toggleProject(2)"
-      [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
+      [ngClass]="{'selected': selectedProject === 'pet-club'}" id="projeto3">
       <ion-label>Pet club</ion-label>
     </ion-item>
 
-    <!-- <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto4')" [ngClass]="{'selected': selectedProject === 'projeto4'}" id="projeto3">
+    <ion-item color="transparent" lines="none" button (click)="toggleProject(3)"
+      [ngClass]="{'selected': selectedProject === 'git-api'}" id="projeto4">
       <ion-label>Github API</ion-label>
-    </ion-item> -->
+    </ion-item>
 
     <ion-item color="transparent" lines="none">
       <ion-label>Mais projetos em: <a href="https://github.com/T0ntow" target="_blank">Github</a></ion-label>
@@ -29,22 +30,23 @@
   <ng-template #mobile>
     <ion-list class="list-mobile">
       <ion-item color="transparent" lines="none" button (click)="toggleProject(0)"
-        [ngClass]="{'selected': selectedProject === 'projeto1'}" id="projeto1">
+        [ngClass]="{'selected': selectedProject === 'wallet-manager'}" id="projeto1">
         <ion-label>Wallet Manager</ion-label>
       </ion-item>
       <ion-item color="transparent" lines="none" button (click)="toggleProject(1)"
-        [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
+        [ngClass]="{'selected': selectedProject === 'controle-estoque'}" id="projeto2">
         <ion-label>Controle Estoque</ion-label>
       </ion-item>
 
       <ion-item color="transparent" lines="none" button (click)="toggleProject(2)"
-        [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
+        [ngClass]="{'selected': selectedProject === 'pet-club'}" id="projeto3">
         <ion-label>Pet club</ion-label>
       </ion-item>
-      <!-- 
-      <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto4')" [ngClass]="{'selected': selectedProject === 'projeto4'}" id="projeto3">
+
+      <ion-item color="transparent" lines="none" button (click)="toggleProject(3)"
+        [ngClass]="{'selected': selectedProject === 'git-api'}" id="projeto4">
         <ion-label>Github API</ion-label>
-      </ion-item> -->
+      </ion-item>
 
       <ion-item color="transparent" lines="none">
         <ion-label>Mais projetos em: <a href="https://github.com/T0ntow" target="_blank">Github</a></ion-label>
@@ -64,21 +66,19 @@
               <h4> {{projeto.descricao}} </h4>
 
               <div id="deploy-box">
-                <p *ngIf="projeto.srcDeploy != '' " >Deploy em: <a [href]="projeto.srcDeploy" target="_blank">
+                <p *ngIf="projeto.srcDeploy != '' ">Deploy em: <a [href]="projeto.srcDeploy" target="_blank">
                     {{projeto.srcDeploy}}</a></p>
 
-                <p *ngIf="projeto.srcGithub != ''">Deploy em: <a [href]="projeto.srcDeploy" target="_blank">
-                    {{projeto.srcDeploy}}</a></p>
+                <p *ngIf="projeto.srcGithub != ''">Disponível em: <a [href]="projeto.srcGithub" target="_blank">
+                    {{projeto.srcGithub}}</a></p>
               </div>
               <div id="tecnologias">
-                <ion-icon class="logo" name="logo-angular"></ion-icon>
-                <ion-icon class="logo" name="logo-ionic"></ion-icon>
-                <ion-icon class="logo" name="logo-firebase"></ion-icon>
-                <ion-icon class="logo" name="logo-sass"></ion-icon>
+                <ion-icon *ngFor="let tecnologia of projeto.tecnologias" class="logo" [name]="tecnologia"></ion-icon>
+                <img  *ngFor="let srcTecnologia of projeto.srcTecnologias" class="logo" [src]="srcTecnologia" alt="">
               </div>
             </div>
           </swiper-slide>
-          <swiper-slide *ngFor="let image of imagesWallet">
+          <swiper-slide *ngFor="let image of projeto.imagens">
             <img [src]="image">
           </swiper-slide>
         </swiper-container>
