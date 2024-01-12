@@ -1,139 +1,90 @@
 <ion-title>Projetos</ion-title>
 
-<div class="box-projects"  [ngClass]="{'mobile': window.innerWidth <= 600}">
+<div class="box-projects" [ngClass]="{'mobile': window.innerWidth <= 600}">
   <ion-list class="list-web" *ngIf="window.innerWidth >= 600; else mobile">
-    <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto1')" [ngClass]="{'selected': selectedProject === 'projeto1'}" id="projeto1">
+    <ion-item color="transparent" lines="none" button (click)="toggleProject(0)"
+      [ngClass]="{'selected': selectedProject === 'projeto1'}" id="projeto1">
       <ion-label>Wallet Manager</ion-label>
     </ion-item>
-    <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto2')" [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
+    <ion-item color="transparent" lines="none" button (click)="toggleProject(1)"
+      [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
       <ion-label>Controle Estoque</ion-label>
     </ion-item>
 
-    <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto3')" [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
+    <ion-item color="transparent" lines="none" button (click)="toggleProject(2)"
+      [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
       <ion-label>Pet club</ion-label>
     </ion-item>
+
+    <!-- <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto4')" [ngClass]="{'selected': selectedProject === 'projeto4'}" id="projeto3">
+      <ion-label>Github API</ion-label>
+    </ion-item> -->
 
     <ion-item color="transparent" lines="none">
       <ion-label>Mais projetos em: <a href="https://github.com/T0ntow" target="_blank">Github</a></ion-label>
     </ion-item>
   </ion-list>
-  
+
 
   <ng-template #mobile>
     <ion-list class="list-mobile">
-      <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto1')" [ngClass]="{'selected': selectedProject === 'projeto1'}" id="projeto1">
+      <ion-item color="transparent" lines="none" button (click)="toggleProject(0)"
+        [ngClass]="{'selected': selectedProject === 'projeto1'}" id="projeto1">
         <ion-label>Wallet Manager</ion-label>
       </ion-item>
-      <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto2')" [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
+      <ion-item color="transparent" lines="none" button (click)="toggleProject(1)"
+        [ngClass]="{'selected': selectedProject === 'projeto2'}" id="projeto2">
         <ion-label>Controle Estoque</ion-label>
       </ion-item>
 
-      <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto3')" [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
+      <ion-item color="transparent" lines="none" button (click)="toggleProject(2)"
+        [ngClass]="{'selected': selectedProject === 'projeto3'}" id="projeto3">
         <ion-label>Pet club</ion-label>
       </ion-item>
-  
+      <!-- 
+      <ion-item color="transparent" lines="none" button (click)="toggleProject('projeto4')" [ngClass]="{'selected': selectedProject === 'projeto4'}" id="projeto3">
+        <ion-label>Github API</ion-label>
+      </ion-item> -->
+
       <ion-item color="transparent" lines="none">
         <ion-label>Mais projetos em: <a href="https://github.com/T0ntow" target="_blank">Github</a></ion-label>
       </ion-item>
     </ion-list>
   </ng-template>
-  
-  <div *ngIf="selectedProject === 'projeto1'" class="box-project">
-    <div class="content"  [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
-        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
 
-        <swiper-slide>
-          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-            <h4>Aplicativo abrangente desenvolvido para gerenciar suas despesas em diversas carteiras, proporcionando uma experiência aprimorada. Inclui recursos gráficos e categorias que visam otimizar a organização e análise dos seus gastos.</h4>
-            <div id="deploy-box">
-              <p>Deploy em: <a href="https://wallet-manager2.netlify.app/home" target="_blank">
-                  https://wallet-manager2.netlify.app/home</a></p>
+  <div *ngFor="let projeto of projetos; let i = index">
+    <div *ngIf="projeto.show" class="box-project">
+      <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
+        <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
+          [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true"
+          pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true"
+          style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)">
+          <swiper-slide>
+            <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
+              <h4> {{projeto.descricao}} </h4>
+
+              <div id="deploy-box">
+                <p *ngIf="projeto.srcDeploy != '' " >Deploy em: <a [href]="projeto.srcDeploy" target="_blank">
+                    {{projeto.srcDeploy}}</a></p>
+
+                <p *ngIf="projeto.srcGithub != ''">Deploy em: <a [href]="projeto.srcDeploy" target="_blank">
+                    {{projeto.srcDeploy}}</a></p>
+              </div>
+              <div id="tecnologias">
+                <ion-icon class="logo" name="logo-angular"></ion-icon>
+                <ion-icon class="logo" name="logo-ionic"></ion-icon>
+                <ion-icon class="logo" name="logo-firebase"></ion-icon>
+                <ion-icon class="logo" name="logo-sass"></ion-icon>
+              </div>
             </div>
-            <div id="tecnologias">
-              <ion-icon class="logo" name="logo-angular"></ion-icon>
-              <ion-icon class="logo" name="logo-ionic"></ion-icon>
-              <ion-icon class="logo" name="logo-firebase"></ion-icon>
-              <ion-icon class="logo" name="logo-sass"></ion-icon>
-            </div>
-          </div>
-        </swiper-slide>
-
-        <swiper-slide *ngFor="let image of imagesWallet">
-          <img [src]="image">
-        </swiper-slide>
-
-      </swiper-container>
+          </swiper-slide>
+          <swiper-slide *ngFor="let image of imagesWallet">
+            <img [src]="image">
+          </swiper-slide>
+        </swiper-container>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="selectedProject === 'projeto2'" class="box-project">
-    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
-        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
-
-        <swiper-slide>
-          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-            <h4>Aplicativo projetado para aprimorar minhas habilidades em SQL e NodeJS, ideal para a gestão eficiente de produtos em estoques de diversas empresas. Oferece uma ampla gama de recursos, incluindo diversos filtros e uma poderosa função de pesquisa para facilitar a navegação e a manipulação de dados.</h4>
-
-            <div id="deploy-box">
-              <p>Deploy em: <a href="https://controle-estoque-sql.netlify.app/home" target="_blank">
-                https://controle-estoque-sql.netlify.app/home</a></p>
-              <p>Disponívem em: <a href="https://github.com/T0ntow/Controle-Estoque" target="_blank"> https://github.com/T0ntow/Controle-Estoque</a></p>
-            </div>
-
-            <div id="tecnologias">
-              <ion-icon class="logo" name="logo-angular"></ion-icon>
-              <ion-icon class="logo" name="logo-ionic"></ion-icon>
-              <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
-              <ion-icon  class="logo" name="logo-nodejs"></ion-icon>
-              <ion-icon class="logo" name="logo-sass"></ion-icon>
-            </div>
-          </div>
-        </swiper-slide>
-
-        <swiper-slide *ngFor="let image of imagesControleEstoque">
-          <img [src]="image">
-        </swiper-slide>
-
-      </swiper-container>
-    </div>
-  </div>
-
-
-  <div *ngIf="selectedProject === 'projeto3'" class="box-project">
-    <div class="content" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-      <swiper-container #swiper class="swiper-container" id="mySwiper" (slidechange)="swiperSlideChange($event)"
-        [parallax]="true" [loop]="true" [autoplay]="true" (afterinit)="swiperReady()" pagination="true" pagination-dynamic-bullets="true" pagination-clickable="true" navigation="true" style="--swiper-navigation-color: var(--contrast); --swiper-pagination-color: var(--contrast)"> 
-
-        <swiper-slide>
-          <div class="content ion-padding-horizontal" [ngClass]="{'content-mobile': window.innerWidth <= 600}">
-            <h4>Aplicativo desenvolvido como projeto final da disciplina de Processos e Desenvolvimento de Sistemas, abrangendo todas as etapas desde a concepção no Figma até a implementação do projeto no VS Code. Essencial para compreender a utilidade dos processos ao longo do caminho até a conclusão.</h4>
-
-            <div id="deploy-box">
-              <p>Deploy em: <a href="https://pet-club.netlify.app/home" target="_blank">
-                https://pet-club.netlify.app/home</a></p>
-              <p>Disponívem em: <a href="https://github.com/T0ntow/pet-club" target="_blank"> https://https://github.com/T0ntow/pet-club</a></p>
-            </div>
-
-            <div id="tecnologias">
-              <ion-icon class="logo" name="logo-angular"></ion-icon>
-              <ion-icon class="logo" name="logo-ionic"></ion-icon>
-              <img  class="logo"  src="/assets/images/servidor-sql.png" alt="">
-              <ion-icon class="logo" name="logo-firebase"></ion-icon>
-
-              <ion-icon  class="logo" name="logo-nodejs"></ion-icon>
-              <ion-icon class="logo" name="logo-sass"></ion-icon>
-            </div>
-          </div>
-        </swiper-slide>
-
-        <swiper-slide *ngFor="let image of imagesControleEstoque">
-          <img [src]="image">
-        </swiper-slide>
-
-      </swiper-container>
-    </div>
-  </div>
 
 </div>
