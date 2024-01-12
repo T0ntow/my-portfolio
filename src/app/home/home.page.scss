@@ -60,11 +60,16 @@ ion-content {
         font-size: clamp(1.5rem, 5vw, 3.2rem);
 
         text-transform: uppercase;
+        text-align: center;
 
         white-space: nowrap;
         overflow: hidden;
-        animation: type 4s steps(18, end);
+        animation: type 4s steps(20, end) normal;
         color: #fff;
+        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        width: 100%;
+        margin: auto;
       }
 
       span {
@@ -90,8 +95,8 @@ ion-content {
         .logo {
           margin: 0px 10px;
 
-          width: clamp(25px, 3vw, 50px);
-          height: clamp(25px, 3vw, 50px);
+          width: clamp(35px, 3vw, 50px);
+          height: clamp(35px, 3vw, 50px);
 
           cursor: pointer;
         }
@@ -171,7 +176,7 @@ ion-content {
     width: 0%;
   }
   to {
-    width: 18ch;
+    width: 20ch;
   }
 }
 
