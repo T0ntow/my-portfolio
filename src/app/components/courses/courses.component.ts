@@ -22,13 +22,10 @@ export class CoursesComponent implements OnInit {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log("sss");
-          
           entry.target.classList.add('show');
 
         } else {
           entry.target.classList.remove('show');
-  
         }
       });
     });
